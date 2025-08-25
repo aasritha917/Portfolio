@@ -39,17 +39,17 @@ const Contact = () => {
             Let's Connect
           </h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
-          {/* <p className="text-lg text-foreground/80 mt-6 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground/80 mt-6 max-w-2xl mx-auto">
             I'm always excited to discuss new opportunities, collaborate on projects, 
             or simply chat about technology and innovation.
-          </p> */}
+          </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">Get In Touch</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Get In Touch</h3>
               <p className="text-foreground/80 leading-relaxed">
                 Whether you have a project in mind, want to discuss opportunities, 
                 or just want to say hello, I'd love to hear from you!
@@ -57,33 +57,42 @@ const Contact = () => {
             </div>
             
             <div className="space-y-6">
-              <div className="flex items-center space-x-4 p-4 bg-card border border-border rounded-lg hover:shadow-glow-secondary transition-all duration-300">
+              <div 
+                className="flex items-center space-x-4 p-4 bg-card border border-border rounded-lg hover:shadow-glow-secondary transition-all duration-300 cursor-pointer"
+                onClick={() => window.open('mailto:aasritha.kaluvala@example.com', '_blank')}
+              >
                 <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
                   <Mail className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground">Email</h4>
-                  <p className="text-foreground/80">aasrithaaishu@gmail.com</p>
+                  <p className="text-foreground/80">aasritha.kaluvala@example.com</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4 p-4 bg-card border border-border rounded-lg hover:shadow-glow-secondary transition-all duration-300">
+              <div 
+                className="flex items-center space-x-4 p-4 bg-card border border-border rounded-lg hover:shadow-glow-secondary transition-all duration-300 cursor-pointer"
+                onClick={() => window.open('https://linkedin.com/in/aasritha-kaluvala', '_blank')}
+              >
                 <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
                   <Linkedin className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground">LinkedIn</h4>
-                  <p className="text-foreground/80">Kaluvala Aasritha</p>
+                  <p className="text-foreground/80">linkedin.com/in/aasritha-kaluvala</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4 p-4 bg-card border border-border rounded-lg hover:shadow-glow-secondary transition-all duration-300">
+              <div 
+                className="flex items-center space-x-4 p-4 bg-card border border-border rounded-lg hover:shadow-glow-secondary transition-all duration-300 cursor-pointer"
+                onClick={() => window.open('https://github.com/aasritha917', '_blank')}
+              >
                 <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
                   <Github className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground">GitHub</h4>
-                  <p className="text-foreground/80">aasritha917</p>
+                  <p className="text-foreground/80">github.com/aasritha-kaluvala</p>
                 </div>
               </div>
               

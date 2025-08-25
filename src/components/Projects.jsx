@@ -1,9 +1,9 @@
 import { ExternalLink, Github, Code, Star } from "lucide-react"
 import { GradientButton } from "./ui/gradient-button"
-import socialMediaProject from "@/assets/social-media-project.jpg"
-import quantumMlProject from "@/assets/quantum-ml-project.jpg"
-import travelPlannerProject from "@/assets/travel-planner-project.jpg"
-import matchMeProject from "@/assets/match-me-project.jpg"
+import socialMediaProject from "@/assets/collage.jpg"
+//import quantumMlProject from "@/assets/quantum-ml-project.jpg"
+import travelPlannerProject from "@/assets/TravelPlan.jpg"
+import matchMeProject from "@/assets/matchme.jpg"
 import recipePlatformProject from "@/assets/recipe-platform-project.jpg"
 import memeHubProject from "@/assets/meme-Hub-project.jpg"
 const Projects = () => {
@@ -14,7 +14,7 @@ const Projects = () => {
       image: travelPlannerProject,
       techStack: ["React.js", "Google Maps API", "Firebase", "Tailwind CSS"],
       githubLink: "https://github.com/aasritha917/TravelPlan",
-      demoLink: "https://travel-plan-theta-one.vercel.app",
+      demoLink: "https://travel-plan-theta-one.vercel.app/",
       featured: false
     },
     {
@@ -42,7 +42,7 @@ const Projects = () => {
       image: socialMediaProject,
       techStack: ["Mobile-APP","Kotlin","firebase","figma"],
       githubLink: "https://github.com/aasritha917/CollageSocialMedia",
-      demoLink: "#",
+      demoLink: "https://github.com/aasritha917/CollageSocialMedia",
       featured: false
     },
     // {
@@ -127,14 +127,28 @@ const Projects = () => {
                   
                   {/* Action Buttons */}
                   <div className="flex flex-wrap gap-2 pt-4 mt-auto">
-                    <GradientButton variant="hero" className="group/btn text-xs px-3 py-2">
-                      <Github className="h-3 w-3 mr-1 group-hover/btn:scale-110 transition-transform" />
-                      Code
-                    </GradientButton>
-                    <GradientButton variant="outline" className="text-xs px-3 py-2">
-                      <ExternalLink className="h-3 w-3 mr-1" />
-                      Demo
-                    </GradientButton>
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <GradientButton variant="hero" className="group/btn text-xs px-3 py-2">
+                        <Github className="h-3 w-3 mr-1 group-hover/btn:scale-110 transition-transform" />
+                        Code
+                      </GradientButton>
+                    </a>
+                    <a
+                      href={project.demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      // Optionally disable link if demoLink is "#"
+                      className={project.demoLink === "#" ? "pointer-events-none opacity-50" : ""}
+                    >
+                      <GradientButton variant="outline" className="text-xs px-3 py-2">
+                        <ExternalLink className="h-3 w-3 mr-1" />
+                        Demo
+                      </GradientButton>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -144,10 +158,16 @@ const Projects = () => {
         
         {/* View More Projects */}
         <div className="text-center mt-16">
+          <a
+            href="https://github.com/aasritha917"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
           <GradientButton variant="outline" size="lg">
             <Code className="h-5 w-5 mr-2" />
             View All Projects on GitHub
           </GradientButton>
+          </a>
         </div>
       </div>
     </section>

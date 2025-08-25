@@ -1,6 +1,7 @@
 import { Download, Github, Linkedin, Mail } from "lucide-react"
 import { GradientButton } from "./ui/gradient-button"
 import heroBg from "@/assets/hero-bg.jpg"
+import profilePic from "@/assets/profile.jpg"
 
 const Hero = () => {
   return (
@@ -16,50 +17,84 @@ const Hero = () => {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <div className="space-y-8">
-          <div className="space-y-4">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white to-primary-foreground bg-clip-text text-transparent">
-              Aasritha Kaluvala
-            </h1>
-            <p className="text-xl sm:text-2xl lg:text-3xl text-primary-foreground/90 font-medium">
-              Coding with Creativity | Aspiring Full Stack Developer
-            </p>
-            <p className="text-lg sm:text-xl text-primary-foreground/80">
-              Java, Web Development & Emerging Tech Enthusiast
-            </p>
-          </div>
-          
-          <p className="text-lg sm:text-xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-           Passionate about turning ideas into innovative solutions, solving challenges with creativity and code, 
-           and constantly exploring the endless possibilities of technology to build impactful, meaningful, 
-           and future-ready digital experiences.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="./public/K_Aasritha_Resume.pdf" Download>
-            <GradientButton variant="hero" size="lg" className="group">
-              <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Download Resume
-            </GradientButton>
-            </a>
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center min-h-screen py-20">
+          {/* Left Side - Text Content */}
+          <div className="text-center lg:text-left space-y-8 order-2 lg:order-1">
+            <div className="space-y-4">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-white to-primary-foreground bg-clip-text text-transparent">
+                Aasritha Kaluvala
+              </h1>
+              <p className="text-xl sm:text-2xl lg:text-3xl text-primary-foreground/90 font-medium">
+                Aspiring Software Engineer
+              </p>
+              <p className="text-lg sm:text-xl text-primary-foreground/80">
+                Java, Web Development & Emerging Tech Enthusiast
+              </p>
+            </div>
             
-            <div className="flex gap-4">
-              <a href="https://github.com/aasritha917" target="_blank" rel="noopener noreferrer">
-              <GradientButton variant="outline" size="icon" className="rounded-full">
-                <Github className="h-5 w-5" />
+            <p className="text-lg sm:text-xl text-primary-foreground/90 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              Passionate about creating innovative solutions through code, solving complex problems, 
+              and exploring the exciting frontiers of technology and quantum computing.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+              <GradientButton 
+                variant="hero" 
+                size="lg" 
+                className="group"
+                onClick={() => {
+                  const link = document.createElement('a')
+                  link.href = 'public/K_Aasritha_Resume.pdf'
+                  link.target = '_blank'
+                  link.download = 'K_Aasritha_Resume.pdf'
+                  document.body.appendChild(link)
+                  link.click()
+                  document.body.removeChild(link)
+                }}
+              >
+                <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                Download Resume
               </GradientButton>
-              </a>
-              <a href="https://www.linkedin.com/in/kaluvala-aasritha/" target="_blank" rel="noopener noreferrer">
-              <GradientButton variant="outline" size="icon" className="rounded-full">
-                <Linkedin className="h-5 w-5" />
-              </GradientButton>
-              </a>
-              <a href="mailto:aasrithaaishu@gmail.com">
-              <GradientButton variant="outline" size="icon" className="rounded-full">
-                <Mail className="h-5 w-5" />
-              </GradientButton>
-              </a>
+              
+              <div className="flex gap-4">
+                <GradientButton 
+                  variant="outline" 
+                  size="icon" 
+                  className="rounded-full"
+                  onClick={() => window.open('https://github.com/aasritha-kaluvala', '_blank')}
+                >
+                  <Github className="h-5 w-5" />
+                </GradientButton>
+                <GradientButton 
+                  variant="outline" 
+                  size="icon" 
+                  className="rounded-full"
+                  onClick={() => window.open('https://linkedin.com/in/aasritha-kaluvala', '_blank')}
+                >
+                  <Linkedin className="h-5 w-5" />
+                </GradientButton>
+                <GradientButton 
+                  variant="outline" 
+                  size="icon" 
+                  className="rounded-full"
+                  onClick={() => window.open('mailto:aasritha.kaluvala@example.com', '_blank')}
+                >
+                  <Mail className="h-5 w-5" />
+                </GradientButton>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Profile Picture */}
+          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+            <div className="relative">
+              <img 
+                src={profilePic} 
+                alt="Aasritha Kaluvala - Professional Profile" 
+                className="w-50 h-50 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-75 xl:h-72 rounded-full object-cover border-4 border-primary shadow-glow-primary"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-10"></div>
             </div>
           </div>
         </div>

@@ -58,7 +58,7 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <a href="./public/K_Aasritha_Resume.pdf" Download>
+            <a href="/K_Aasritha_Resume.pdf" Download>
             <GradientButton variant="hero" size="sm">
               Resume
             </GradientButton>

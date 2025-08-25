@@ -14,15 +14,34 @@ import {
   GitBranch
 } from "lucide-react"
 
+// Import your Flaticon SVGs (downloaded and placed in src/assets/skills/)
+import JavaIcon from "@/assets/skills/java.png"
+import CIcon from "@/assets/skills/lc.png"
+import JSIcon from "@/assets/skills/js.png"
+import HTMLIcon from "@/assets/skills/html.png"
+import CSSIcon from "@/assets/skills/css.png"
+import ReactIcon from "@/assets/skills/react.png"
+import NodeIcon from "@/assets/skills/nodejs.png"
+import JDBCIcon from "@/assets/skills/jdbc.png"
+import BootstrapIcon from "@/assets/skills/bootstrap.png"
+import TailwindIcon from "@/assets/skills/tailwind.png"
+import ReduxIcon from "@/assets/skills/redux.png"
+import SQLIcon from "@/assets/skills/sql.png"
+import MongoDBIcon from "@/assets/skills/mongodb.png"
+import SalesforceIcon from "@/assets/skills/salesforce.png"
+import VSCodeIcon from "@/assets/skills/vscode.png"
+import JupyterIcon from "@/assets/skills/jupyter.png"
+import GitHubIcon from "@/assets/skills/github.png"
+
 const Skills = () => {
   const skillCategories = [
     {
       title: "Programming Languages",
       icon: Code2,
       skills: [
-        { name: "Java", icon: FileCode },
-        { name: "C", icon: Terminal },
-        { name: "JavaScript", icon: FileCode }
+        { name: "Java", icon: JavaIcon },
+        { name: "C", icon: CIcon },
+        { name: "JavaScript", icon: JSIcon }
       ],
       color: "from-purple-500 to-blue-500"
     },
@@ -30,10 +49,10 @@ const Skills = () => {
       title: "Web Development",
       icon: Globe,
       skills: [
-        { name: "HTML", icon: FileCode },
-        { name: "CSS", icon: FileCode },
-        { name: "React.js", icon: Globe },
-        { name: "Node.js", icon: Server }
+        { name: "HTML", icon: HTMLIcon },
+        { name: "CSS", icon: CSSIcon },
+        { name: "React.js", icon: ReactIcon },
+        { name: "Node.js", icon: NodeIcon }
       ],
       color: "from-blue-500 to-cyan-500"
     },
@@ -41,10 +60,10 @@ const Skills = () => {
       title: "Frameworks",
       icon: Layers,
       skills: [
-        { name: "JDBC", icon: Database },
-        { name: "Bootstrap", icon: Monitor },
-        { name: "Tailwind", icon: Monitor },
-        { name: "Redux", icon: Layers }
+        { name: "JDBC", icon: JDBCIcon },
+        { name: "Bootstrap", icon: BootstrapIcon },
+        { name: "Tailwind", icon: TailwindIcon },
+        { name: "Redux", icon: ReduxIcon }
       ],
       color: "from-cyan-500 to-green-500"
     },
@@ -52,8 +71,8 @@ const Skills = () => {
       title: "Databases",
       icon: Database,
       skills: [
-        { name: "SQL", icon: Database },
-        { name: "MongoDB", icon: Database }
+        { name: "SQL", icon: SQLIcon },
+        { name: "MongoDB", icon: MongoDBIcon }
       ],
       color: "from-green-500 to-yellow-500"
     },
@@ -61,10 +80,10 @@ const Skills = () => {
       title: "Tools & Technologies",
       icon: Wrench,
       skills: [
-        { name: "Salesforce", icon: Wrench },
-        { name: "VS Code", icon: Terminal },
-        { name: "Jupyter", icon: FileCode },
-        { name: "GitHub", icon: GitBranch }
+        { name: "Salesforce", icon: SalesforceIcon },
+        { name: "VS Code", icon: VSCodeIcon },
+        { name: "Jupyter", icon: JupyterIcon },
+        { name: "GitHub", icon: GitHubIcon }
       ],
       color: "from-yellow-500 to-orange-500"
     },
@@ -100,7 +119,7 @@ const Skills = () => {
                 className="group bg-card border border-border rounded-xl p-6 hover:shadow-glow-secondary transition-all duration-300 hover:scale-105"
               >
                 {/* Header */}
-                <div className="flex items-center mb-2">
+                <div className="flex items-center mb-6">
                   <div className={`w-12 h-12 bg-gradient-to-r ${category.color} rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
                     <IconComponent className="h-6 w-6 text-white" />
                   </div>
@@ -113,12 +132,27 @@ const Skills = () => {
                 <div className="space-y-3">
                   {category.skills.map((skill, skillIndex) => {
                     const SkillIcon = skill.icon
+                    // For Core Skills: white bg, black icon; others: muted bg
+                    const isCoreSkills = category.title === "Core Skills"
+                    const skillBg = isCoreSkills
+                      ? "bg-white text-black"
+                      : "bg-muted"
+                    const iconClass = isCoreSkills
+                      ? "h-5 w-5 text-black"
+                      : "h-5 w-5 text-white"
                     return (
                       <div
                         key={skillIndex}
-                        className="flex items-center justify-center p-3 bg-secondary/50 rounded-lg hover:bg-secondary transition-colors duration-200"
+                        className="flex items-center p-3 bg-secondary/50 rounded-lg hover:bg-secondary transition-colors duration-200"
                       >
-                        <SkillIcon className="h-4 w-4 text-primary mr-3" />
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 ${skillBg}`}>
+                          {/* Render PNG or Lucide icon */}
+                          {typeof SkillIcon === "string" ? (
+                            <img src={SkillIcon} alt={skill.name} className="h-6 w-6" />
+                          ) : (
+                            <SkillIcon className={iconClass} />
+                          )}
+                        </div>
                         <span className="text-foreground font-medium">{skill.name}</span>
                       </div>
                     )
@@ -130,7 +164,7 @@ const Skills = () => {
         </div>
         
         {/* Additional Skills Highlight */}
-        <div className="mt-12 text-center">
+        <div className="mt-16 text-center">
           <div className="inline-flex items-center space-x-4 px-8 py-4 bg-gradient-primary rounded-full text-white font-medium">
             <Zap className="h-5 w-5" />
             <span>Always learning and exploring new technologies</span>
