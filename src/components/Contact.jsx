@@ -59,7 +59,7 @@ const Contact = () => {
             <div className="space-y-6">
               <div 
                 className="flex items-center space-x-4 p-4 bg-card border border-border rounded-lg hover:shadow-glow-secondary transition-all duration-300 cursor-pointer"
-                onClick={() => window.open('mailto:aasritha.kaluvala@example.com', '_blank')}
+                onClick={() => window.open('mailto:aasrithaaishu@gmail.com', '_blank')}
               >
                 <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
                   <Mail className="h-6 w-6 text-white" />
@@ -72,7 +72,7 @@ const Contact = () => {
               
               <div 
                 className="flex items-center space-x-4 p-4 bg-card border border-border rounded-lg hover:shadow-glow-secondary transition-all duration-300 cursor-pointer"
-                onClick={() => window.open('https://linkedin.com/in/aasritha-kaluvala', '_blank')}
+                onClick={() => window.open('https://www.linkedin.com/in/kaluvala-aasritha/', '_blank')}
               >
                 <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
                   <Linkedin className="h-6 w-6 text-white" />

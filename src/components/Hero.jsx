@@ -63,7 +63,7 @@ const Hero = () => {
                   variant="outline" 
                   size="icon" 
                   className="rounded-full"
-                  onClick={() => window.open('https://github.com/aasritha-kaluvala', '_blank')}
+                  onClick={() => window.open('https://github.com/aasritha917', '_blank')}
                 >
                   <Github className="h-5 w-5" />
                 </GradientButton>
@@ -71,7 +71,7 @@ const Hero = () => {
                   variant="outline" 
                   size="icon" 
                   className="rounded-full"
-                  onClick={() => window.open('https://linkedin.com/in/aasritha-kaluvala', '_blank')}
+                  onClick={() => window.open('https://www.linkedin.com/in/kaluvala-aasritha/', '_blank')}
                 >
                   <Linkedin className="h-5 w-5" />
                 </GradientButton>
