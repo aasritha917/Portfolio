@@ -5,7 +5,7 @@ import profilePic from "@/assets/profile.jpg"
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
@@ -38,14 +38,13 @@ const Hero = () => {
               and exploring the exciting frontiers of technology and quantum computing.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-              <a href="/K_Aasritha_Resume.pdf" Download>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">   
                 <GradientButton
                   variant="hero"
                   size="sm"
                   onClick={() => {
-                    const link = document.createElement('a')
-                    link.href = '/K_Aasritha_Resume.pdf'
+                const link = document.createElement('a')
+                    link.href = '/Aasritha_Kaluvala_Resume.pdf'
                     link.download = 'Aasritha_Kaluvala_Resume.pdf'
                     document.body.appendChild(link)
                     link.click()
@@ -56,7 +55,7 @@ const Hero = () => {
                   <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                   Download Resume
                 </GradientButton>
-              </a>
+              
               <div className="flex gap-4">
                 <GradientButton
                   variant="outline"
