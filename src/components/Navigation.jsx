@@ -110,8 +110,8 @@ const Navigation = () => {
                   className="w-full"
                   onClick={() => {
                     const link = document.createElement('a')
-                    link.href = '/Aasritha_Kaluvala_Resume.pdf'
-                    link.download = 'Aasritha_Kaluvala_Resume.pdf'
+                    link.href = '/K_Aasritha_Resume.pdf'
+                    link.download = 'K_Aasritha_Resume.pdf'
                     document.body.appendChild(link)
                     link.click()
                     document.body.removeChild(link)
