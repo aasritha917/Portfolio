@@ -69,6 +69,7 @@ const Navigation = () => {
                 document.body.appendChild(link)
                 link.click()
                 document.body.removeChild(link)
+                window.open('/K_Aasritha_Resume.pdf', '_blank')
               }}
             >
               Resume
@@ -114,6 +115,7 @@ const Navigation = () => {
                     document.body.appendChild(link)
                     link.click()
                     document.body.removeChild(link)
+                    window.open('/K_Aasritha_Resume.pdf', '_blank')
                   }}
                 >
                   Resume

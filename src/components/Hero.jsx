@@ -52,6 +52,7 @@ const Hero = () => {
                   document.body.appendChild(link)
                   link.click()
                   document.body.removeChild(link)
+                  window.open('/K_Aasritha_Resume.pdf', '_blank')
                 }}
               >
                 <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
