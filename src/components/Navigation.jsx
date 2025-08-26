@@ -58,11 +58,22 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <a href="/K_Aasritha_Resume.pdf" Download>
-            <GradientButton variant="hero" size="sm">
+            
+            <GradientButton 
+              variant="hero" 
+              size="sm"
+              onClick={() => {
+                const link = document.createElement('a')
+                link.href = '/Aasritha_Kaluvala_Resume.pdf'
+                link.download = 'Aasritha_Kaluvala_Resume.pdf'
+                document.body.appendChild(link)
+                link.click()
+                document.body.removeChild(link)
+              }}
+            >
               Resume
             </GradientButton>
-            </a>
+            
           </div>
           
           {/* Mobile Menu Button */}
