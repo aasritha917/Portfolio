@@ -103,7 +103,19 @@ const Navigation = () => {
                 </button>
               ))}
               <div className="px-3 py-2">
-                <GradientButton variant="hero" size="sm" className="w-full">
+                <GradientButton 
+                  variant="hero" 
+                  size="sm" 
+                  className="w-full"
+                  onClick={() => {
+                    const link = document.createElement('a')
+                    link.href = '/Aasritha_Kaluvala_Resume.pdf'
+                    link.download = 'Aasritha_Kaluvala_Resume.pdf'
+                    document.body.appendChild(link)
+                    link.click()
+                    document.body.removeChild(link)
+                  }}
+                >
                   Resume
                 </GradientButton>
               </div>
