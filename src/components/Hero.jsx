@@ -47,7 +47,6 @@ const Hero = () => {
                 onClick={() => {
                   const link = document.createElement('a')
                   link.href = 'K_Aasritha_Resume.pdf'
-                  link.target = '_blank'
                   link.download = 'K_Aasritha_Resume.pdf'
                   document.body.appendChild(link)
                   link.click()
